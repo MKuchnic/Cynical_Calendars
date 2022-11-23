@@ -1,0 +1,9 @@
+Update to Cynical Calendars plugin for Indigo Home Automation
+
+Cynical Calendars is designed to be an observer of calendar events. It watches and reports on events that are created and maintained outside of Indigo itself. Cynical Calendars has no actions to create or change calendar events. It is really quite simple.
+
+Requirements:
+The plugin will access the local MacOS calendar and consume the calendar events
+
+Special Thanks to:
+Perry the Cynic for letting me use his original code and update it to support the new Eventkit functionality in MacOS Ventura
