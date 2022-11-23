@@ -1,0 +1,114 @@
+<!-- Copyright 2011-2016 Perry The Cynic. All rights reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<Events>
+    <Event id="calevent">
+        <Name>Calendar Event</Name>
+        <ConfigUI>
+
+            <Field id="title" type="textfield"
+            	tooltip="A regular expression to match in the calendar event title.">
+                <Label>Title:</Label>
+            </Field>
+			<Field id="notes" type="textfield" defaultValue="">
+				tooltip="Event Notes">
+				<Label>Notes:</Label>
+			</Field>
+			<Field id="location" type="textfield" defaultValue="">
+				tooltip="Event Location">
+				<Label>Location:</Label>
+			</Field>
+			<Field id="calendar" type="menu" defaultValue="">
+				tooltip="iCal Calendar">
+				<List class="self" filter="N/A" method="Calendars"/>
+				<Label>Calendar:</Label>
+			</Field>
+
+  			<Field type="separator"/>
+
+			<Field id="match_start" type="checkbox" defaultValue="yes">
+				<Label>Start:</Label>
+				<Description>Match when the event begins.</Description>
+				<CallbackMethod>match_start_checked</CallbackMethod>
+			</Field>
+			<Field id="match_end" type="checkbox" defaultValue="yes">
+				<Label>End:</Label>
+				<Description>Match when the event ends.</Description>
+				<CallbackMethod>match_end_checked</CallbackMethod>
+			</Field>
+
+  			<Field type="separator"/>
+
+			<Field id="match_hourly" type="checkbox" defaultValue="yes">
+				<Label>Hourly:</Label>
+				<Description>Match Hourly Events.</Description>
+				<CallbackMethod>match_hourly_checked</CallbackMethod>
+			</Field>
+ 			<Field id="match_allday" type="checkbox" defaultValue="yes">
+				<Label>All Day:</Label>
+				<Description>Match All-Day Events.</Description>
+				<CallbackMethod>match_allday_checked</CallbackMethod>
+			</Field>
+
+ 			<Field type="separator"/>
+
+			<Field id="execute_notes" type="checkbox" defaultValue="no">
+				<Label>Execute Notes:</Label>
+				<Description>Execute event notes as a Python script.</Description>
+			</Field>
+
+        </ConfigUI>
+    </Event>
+
+    <Event id="calchange">
+        <Name>Event Change</Name>
+        <ConfigUI>
+
+            <Field id="title" type="textfield"
+            	tooltip="A regular expression to match in the calendar event title.">
+                <Label>Title:</Label>
+            </Field>
+			<Field id="notes" type="textfield" defaultValue="">
+				tooltip="Event Notes">
+				<Label>Notes:</Label>
+			</Field>
+			<Field id="location" type="textfield" defaultValue="">
+				tooltip="Event Location">
+				<Label>Location:</Label>
+			</Field>
+			<Field id="calendar" type="menu" defaultValue="">
+				tooltip="iCal Calendar">
+				<List class="self" filter="N/A" method="Calendars"/>
+				<Label>Calendar:</Label>
+			</Field>
+
+  			<Field type="separator"/>
+
+			<Field id="match_inserted" type="checkbox" defaultValue="yes">
+				<Label>Insertion:</Label>
+				<Description>Match newly created events.</Description>
+			</Field>
+			<Field id="match_removed" type="checkbox" defaultValue="yes">
+				<Label>Removal:</Label>
+				<Description>Match removed events.</Description>
+			</Field>
+			<Field id="match_changed" type="checkbox" defaultValue="yes">
+				<Label>Change:</Label>
+				<Description>Match changes to existing events.</Description>
+			</Field>
+
+
+        </ConfigUI>
+    </Event>
+</Events>
